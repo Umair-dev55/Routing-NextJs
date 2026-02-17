@@ -1,0 +1,103 @@
+@import "tailwindcss";
+* {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  background-color: black;
+  color: white;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+@layer utilities {
+  /* Flex & Grid Centering */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-start {
+    @apply flex items-center justify-start;
+  }
+  .flex-end {
+    @apply flex items-center justify-end;
+  }
+
+  /* Absolute Positioning Shortcuts */
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .absolute-full {
+    @apply absolute inset-0;
+  }
+  .absolute-top-left {
+    @apply absolute top-0 left-0;
+  }
+  .absolute-bottom-right {
+    @apply absolute bottom-0 right-0;
+  }
+  .nested-link {
+    @apply text-white flex justify-center text-2xl py-5 gap-10;
+  }
+
+  /* Text Utilities */
+  .text-balance {
+    text-wrap: balance; /* Modern browsers mein perfect line wrapping */
+  }
+  .text-shadow-sm {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+  }
+
+  /* Shadow Utilities */
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  .shadow-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  .shadow-hover {
+    transition: box-shadow 0.3s ease;
+  }
+  .shadow-hover:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Border Radius Shortcuts */
+  .rounded-xl-2 {
+    border-radius: 1rem; /* 16px */
+  }
+  .rounded-xl-3 {
+    border-radius: 1.5rem; /* 24px */
+  }
+
+  /* Scrollbar Hide (for webkit browsers) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Common Gap/Spacing Shortcuts */
+  .gap-x-8 {
+    gap: 2rem;
+  }
+  .gap-y-10 {
+    row-gap: 2.5rem;
+  }
+}
